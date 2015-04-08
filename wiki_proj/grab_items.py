@@ -17,12 +17,14 @@ with open("examples_latd+infobox.xml") as f:
 				state = True
 				continue
 
-#START COLLECTING
+		#START COLLECTING
 		if (state):
 			opens += line.count("{{")
 			closes += line.count("}}")
 			box_s += line
 			#print(opens, closes)
+
+			#TODO: -look for latd and longd in line
 			if (opens == closes):
 				infoboxes.append(box_s + '</infobox>')
 				state = False
