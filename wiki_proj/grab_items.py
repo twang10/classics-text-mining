@@ -23,11 +23,11 @@ with open("examples_latd+infobox.xml") as f:
 			opens += line.count("{{")
 			closes += line.count("}}")
 			box_s += line
+			
+			#look for latd and longd in line
 			if('latd' in line):
 				has_locs = True
-			#print(opens, closes)
 
-			#TODO: -look for latd and longd in line
 			if (opens == closes):
 				if has_locs:
 					infoboxes.append(box_s + '</infobox>')
